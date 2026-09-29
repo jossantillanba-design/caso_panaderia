@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen de Pedido</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-pagina="resumen" class="bg-light p-4">
+  <main class="container" style="max-width: 550px;">
+    <div id="sinDatos" class="alert alert-warning text-center d-none">
+      <h5>No hay datos registrados</h5>
+      <p class="small mb-3">Debe realizar un pedido.</p>
+      <a href="pedido.html" class="btn btn-warning btn-sm">Ir al formulario</a>
+    </div>
+
+    <div id="conDatos" class="card p-4 shadow-sm d-none">
+      <h3 class="fw-bold mb-3">Resumen de Cotización</h3>
+      <pre id="detalle" class="bg-light p-3 border rounded font-monospace small mb-3"></pre>
+      <a href="pedido.html" class="btn btn-secondary w-100">Volver / Editar pedido</a>
+    </div>
+  </main>
+</body>
+</html>

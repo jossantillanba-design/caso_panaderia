@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panadería Gatu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-pagina="pedido" class="bg-light p-4">
+  <main class="container" style="max-width: 650px;">
+    <div class="card p-4 shadow-sm bg-white">
+      <h3 class="fw-bold mb-1">Panadería Gatu</h3>
+      <p class="text-muted small mb-3">Cotizador de pedidos</p>
+
+      <form id="formPedido">
+        <div class="mb-3">
+          <label for="cliente" class="form-label fw-semibold">Nombre del cliente</label>
+          <input type="text" class="form-control" id="cliente">
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label fw-semibold">Correo</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-sm-6">
+            <label for="fecha" class="form-label fw-semibold">Fecha de entrega</label>
+            <input type="date" class="form-control" id="fecha">
+          </div>
+          <div class="col-sm-6">
+            <label for="modalidad" class="form-label fw-semibold">Modalidad</label>
+            <select class="form-select" id="modalidad">
+              <option value="retiro">Retiro en tienda (S/ 0)</option>
+              <option value="reparto">Reparto a domicilio (S/ 8)</option>
+            </select>
+          </div>
+        </div>
+        <label class="form-label fw-bold">Productos (Cantidades de 1 a 10):</label>
+        <div class="border rounded p-3 mb-3 bg-light">
+          <!-- Producto 1 -->
+          <div class="row align-items-center mb-3">
+            <div class="col-7">
+              <label for="cant-pan" class="form-label mb-0 fw-medium">Pan de masa madre (S/ 18.00)</label>
+            </div>
+            <div class="col-5">
+              <input type="number" class="form-control cant-prod" id="cant-pan" data-id="pan" min="0" max="10" step="1" value="0">
+            </div>
+          </div>
+          <div class="row align-items-center mb-3">
+            <div class="col-7">
+              <label for="cant-alfajores" class="form-label mb-0 fw-medium">Caja de alfajores (S/ 24.00)</label>
+            </div>
+            <div class="col-5">
+              <input type="number" class="form-control cant-prod" id="cant-alfajores" data-id="alfajores" min="0" max="10" step="1" value="0">
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-7">
+              <label for="cant-torta" class="form-label mb-0 fw-medium">Torta pequeña (S/ 45.00)</label>
+            </div>
+            <div class="col-5">
+              <input type="number" class="form-control cant-prod" id="cant-torta" data-id="torta" min="0" max="10" step="1" value="0">
+            </div>
+          </div>
+        </div>
+        <div class="alert alert-secondary py-2 mb-3">
+          <div>Subtotal: <b id="lblSubtotal">S/ 0.00</b></div>
+          <div>Descuento (10% si subtotal ≥ 100): <b id="lblDescuento" class="text-success">- S/ 0.00</b></div>
+          <div>Reparto: <b id="lblReparto">S/ 0.00</b></div>
+          <hr class="my-1">
+          <div class="fs-5">Total: <b id="lblTotal" class="text-primary">S/ 0.00</b></div>
+        </div>
+
+
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary w-100">Enviar cotización</button>
+          <button type="button" class="btn btn-outline-secondary" id="btnLimpiar">Limpiar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
